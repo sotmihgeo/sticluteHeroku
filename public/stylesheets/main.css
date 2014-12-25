@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Twister";
+    src: url("../fonts/twister.ttf");
+}
+
+.dialog-background {
+    background: none repeat scroll 0 0 rgba(255, 0, 25, 0.5);
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.dialog-loading-wrapper {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    height: 300px;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -150px;
+    position: fixed;
+    top: 50%;
+    width: 500px;
+    z-index: 9999999;
+}
+.dialog-loading-icon {
+    font-family: 'Twister';
+    font-size: 5.5em;
+    color: #fff;
+    display: block;
+    height: 300px;
+    line-height: 300px;
+    margin: 0;
+    padding: 1px;
+    text-align: center;
+    width: 500px;
+}
