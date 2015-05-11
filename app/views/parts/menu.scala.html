@@ -1,0 +1,102 @@
+@(connectedUser: models.User)
+
+<div class="menu">
+    <nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
+        <div class="cbp-hsinner">
+            <ul class="cbp-hsmenu">
+                <li>
+                    <a class="logo menu-font" href="/" rel="home">
+                        <img class="bottom-logo" src='@routes.Assets.at("images/sticlute_190x70_u.png")' />
+                        <img class="top-logo" src='@routes.Assets.at("images/sticlute_190x70_t.png")' />
+                        <span>Acasa</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-font" href="#">Colectie</a>
+                    <ul class="cbp-hssubmenu cbp-hssub-rows">
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/vin.png")' alt="Vin" />
+                                <span>Vin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/whiskey.png")' alt="Whiskey" />
+                                <span>Whiskey</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/bourbon.png")' alt="Bourbon" />
+                                <span>Bourbon</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/scotch.png")' alt="Scotch" />
+                                <span>Scotch</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/cognac.png")' alt="Cognac" />
+                                <span>Cognac</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/brandy.png")' alt="Brandy" />
+                                <span>Brandy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/gin.png")' alt="Gin" />
+                                <span>Gin</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/rom.png")' alt="Rom" />
+                                <span>Rom</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/tequila.png")' alt="Tequila" />
+                                <span>Tequila</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="submenu-font" href="/">
+                                <img src='@routes.Assets.at("images/vodka.png")' alt="Vodka" />
+                                <span>Vodka</span>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                </li>
+                <li>
+                    <a class="menu-font" href="/">Speciale</a>
+                </li>
+                <li>
+                    <a class="menu-font" href="/">Linkuri</a>
+                </li>
+                <li>
+                    <a class="menu-font" href="/">Contact</a>
+                </li>
+                @if(connectedUser.connected) {
+                <li>
+                    <a class="menu-font" href="/">Administrare</a>
+                </li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <script src='@routes.Assets.at("javascripts/cbpHorizontalSlideOutMenu.js")'></script>
+    <script>
+        var menu = new cbpHorizontalSlideOutMenu(document.getElementById('cbp-hsmenu-wrapper'));
+    </script>
+</div>

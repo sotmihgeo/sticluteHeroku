@@ -1,0 +1,16 @@
+@(connectedUser: models.User)
+
+<div class="Login">
+    @if(!connectedUser.connected) {
+    <div class="login-warpper">
+        <a href="#"><span>Login</span></a>
+    </div>
+    } else {
+    <div class="logout-wrapper">
+        <form>
+            <span>[@connectedUser.username]</span>
+            <input type="submit" class="logout-link" value="Logout">/* .logout-link { background-color: transparent; text-decoration: underline; border: none; color: blue; cursor: pointer; } */
+        </form>
+    </div>
+    }
+</div>

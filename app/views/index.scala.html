@@ -1,9 +1,9 @@
-@(message: String) @main("In lucru") {
+@(message: String, connectedUser: models.User)
 
-<div class="dialog-background">
-    <div class="dialog-loading-wrapper">
-        <span class="dialog-loading-icon">@message</span>
-    </div>
-</div>
+@main(title = "Sticlute", connectedUser) {
+    
+  <h1>@message</h1>
+
+  ...
+    
 }
-
