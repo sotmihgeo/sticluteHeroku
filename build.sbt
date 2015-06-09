@@ -13,5 +13,5 @@ libraryDependencies ++= Seq(
   ws,
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   "com.typesafe.slick" %% "slick" % "3.0.0",
-  "com.typesafe.slick" %% "slick-codegen" % "3.0.0"
+  "org.slf4j" % "slf4j-api" % "1.7.12"
 )
