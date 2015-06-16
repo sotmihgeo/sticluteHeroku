@@ -90,7 +90,7 @@ html {
 	-webkit-font-smoothing: antialiased;
     padding: 0;
     margin: 0;
-    background: rgba(250, 237, 254, 0.7); /* #FAEDFE */
+    background: rgba(250, 237, 254, 0.7); /*  #FAEDFE */
 }
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 
@@ -529,7 +529,7 @@ input[type="text"].ct-search-input {
 	left: 0;
 	top: 100%;
 	width: 100%;
-	z-index: 0;
+	z-index: 9;
 	text-align: center;
 	visibility: hidden;
 }
@@ -617,13 +617,163 @@ input[type="text"].ct-search-input {
 	width: 100%;
 	top: 100%;
 	left: 0;
-	z-index: 0;
+	z-index: 9;
 	height: 0px;
     -webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
     -o-transition: height 0.3s;
 	transition: height 0.3s;
+}
+
+.lista-sticle-container {
+	width: 100%;
+}
+.lista-sticle {
+	list-style: none;
+	position: relative;
+	max-width: 1050px;
+	margin: auto;
+}
+.lista-sticle:before, .lista-sticle:after {
+	content: " ";
+    display: table;
+}
+.lista-sticle:after {
+    clear: both;
+}
+.lista-sticle li {
+	position: relative;
+	width: 300px;
+	float: left;
+	z-index: 1;
+	margin: 15px 25px;
+	padding-top: 30px;
+}
+.ls-border-glow {
+	width: 300px;
+	height: 550px;
+}
+.ls-border {
+	position: relative;
+	padding-top: 15px;
+	width: 300px;
+	height: 550px;
+	background-color: #FAEDFE;
+	border: 1px solid rgba(133,0,166,0.3);
+}
+.ls-border:before {
+	content: '';
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	border: 1px solid #FAEDFE;
+	height: 100%;
+	width: 300px;
+	border-radius: 50px 20px 100px 190px;
+}
+.picShadowEffect {
+	width: 263px;
+	height: 350px;
+	margin:0px auto;
+	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(133,0,166,0.3), 0 0 40px rgba(133,0,166,0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(133,0,166,0.3), 0 0 40px rgba(133,0,166,0.1) inset;
+    box-shadow:0 1px 4px rgba(133,0,166,0.3), 0 0 40px rgba(133,0,166,0.1) inset;
+}
+.picShadowEffect:before, .picShadowEffect:after {
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(222,97,253,0.8);
+    -moz-box-shadow:0 0 20px rgba(222,97,253,0.8);
+    box-shadow:0 0 20px rgba(222,97,253,0.8);
+    top:1px;
+    bottom:1px;
+    left:0;
+    right:0;
+    -webkit-border-radius:100px / 1px;
+    -moz-border-radius:100px / 1px;
+    border-radius:100px / 1px;
+}
+.picShadowEffect:after {
+	right:10px; 
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg); 
+    -moz-transform:skew(8deg) rotate(3deg);     
+    -ms-transform:skew(8deg) rotate(3deg);     
+    -o-transform:skew(8deg) rotate(3deg); 
+    transform:skew(8deg) rotate(3deg);
+}
+.picShadowEffect img {
+	border-radius: 3px;
+}
+.ls-info {
+	position: relative;
+}
+.ls-info h3 {
+	padding: 15px 0 25px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(133,0,166,0.3);
+	border-radius: 0 0 5px 0;
+	font-size: 26px;
+}
+.ls-info-colectie {
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: left;
+	padding-bottom: 5px;
+	margin-left: 10px;
+	display: block;
+}
+.ls-info-colectie a {
+	/*display: block;*/
+	color: rgba(133,0,166,0.7);
+    text-decoration: none;
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.ls-info-colectie a:hover {
+	color: #8500A6;
+}
+.ls-info-nume {
+	display: block;
+	margin-left: 10px;
+}
+.ls-info-nume a {
+	/*display: block;*/
+	color: #000;
+    text-decoration: none;
+    -webkit-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -ms-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+}
+.ls-info-nume a:hover {
+	color: #8500A6;
+}
+.ls-info-tara {
+	padding-top: 5px;
+	margin-left: 10px;
+	display: block;
+	float: left;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(133,0,166,0.7);
+}
+.ls-info-greutate {
+	padding-top: 5px;
+	margin-right: 10px;
+	display: block;
+	float: right;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(133,0,166,0.7);
 }
 
 @media screen and (max-width: 945px) {

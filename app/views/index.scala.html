@@ -5,18 +5,30 @@
   <h1>@message</h1>
 
   @Option(paginaCurenta.elemente).filterNot(_.isEmpty).map { sticlute =>
-  	<table>
-  	  @sticlute.map { sticluta =>
-  	    <tr>
-  	      <td>@sticluta.denumire</td>
-  	      <td>@sticluta.greutate</td>
-  	      <td>@sticluta.colectie</td>
-  	      <td>@sticluta.tara</td>
-  	      <td>@sticluta.descriere</td>
-  	      <td>@sticluta.calePoza</td>
-  	    </tr>	
-  	  }
-  	</table>
+  	<div class="lista-sticle-container">
+  	  <ul class="lista-sticle">
+  	    @sticlute.map { sticluta =>
+  	      <li>
+  	        <div class="ls-border-glow">
+  	          <div class="ls-border">
+  	            <div class="picShadowEffect">
+  	              <img src="@sticluta.calePoza" alt="@sticluta.denumire" />
+  	            </div>
+  	            <div class="ls-info">
+  	              <h3>
+  	                <span class="ls-info-colectie"><a href="">[@sticluta.colectie]</a></span>
+                    <span class="ls-info-nume"><a href="">@sticluta.denumire</a></span>
+    	            <span class="ls-info-tara"><span class="flag-icon flag-icon-@{sticluta.tara.map(_.toLowerCase)}"></span> @sticluta.tara</span>
+  	                <span class="ls-info-greutate"><span>@sticluta.greutate</span>ml</span>
+  	              </h3>
+                  <p>@sticluta.descriere</p>
+                </div>
+              </div>
+            </div>
+  	      </li>	
+  	    }
+  	  </ul>
+  	</div>
   }.getOrElse {
     Nimic de afisat
   }
