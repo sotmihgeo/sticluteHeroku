@@ -1,8 +1,6 @@
 @(message: String, connectedUser: models.User, paginaCurenta: common.Pagina[Sticla])
 
 @main(title = "Sticlute", connectedUser) {
-    
-  <h1>@message</h1>
 
   @Option(paginaCurenta.elemente).filterNot(_.isEmpty).map { sticlute =>
   	<div class="lista-sticle-container">
@@ -21,7 +19,7 @@
     	            <span class="ls-info-tara"><span class="flag-icon flag-icon-@{sticluta.tara.map(_.toLowerCase)}"></span> @sticluta.tara</span>
   	                <span class="ls-info-greutate"><span>@sticluta.greutate</span>ml</span>
   	              </h3>
-                  <p>@sticluta.descriere</p>
+                  <p>" @sticluta.descriere "</p>
                 </div>
               </div>
             </div>

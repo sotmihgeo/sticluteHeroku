@@ -17,7 +17,7 @@ object Application extends Controller {
     Global.connectedUser = User("micky.sotirca@gmail.com", "", false, false)
     
     SticlaData.lista(0, 10, "%" + "" + "%").map { pagina =>
-      Ok(views.html.index("Colectie de sticlute mickyshor.ro", Global.connectedUser, pagina))
+      Ok(views.html.index("...", Global.connectedUser, pagina))
     }.recover {
       case ex: TimeoutException =>
         Logger.error("Problema la incarcare lista sticlute")

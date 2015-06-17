@@ -652,13 +652,22 @@ input[type="text"].ct-search-input {
 }
 .ls-border-glow {
 	width: 300px;
-	height: 550px;
+	height: 530px;
+	
+	-webkit-transition: 0.3s Ease;
+	-moz-transition: 0.3s Ease;
+    -ms-transition: 0.3s Ease;
+    -o-transition: 0.3s Ease;
+	transition: 0.3s Ease;
+}
+.ls-border-glow:hover {
+	box-shadow: 0px 0px 10px 7px rgba(133,0,166,0.3);
 }
 .ls-border {
 	position: relative;
 	padding-top: 15px;
 	width: 300px;
-	height: 550px;
+	height: 530px;
 	background-color: #FAEDFE;
 	border: 1px solid rgba(133,0,166,0.3);
 }
@@ -671,6 +680,12 @@ input[type="text"].ct-search-input {
 	height: 100%;
 	width: 300px;
 	border-radius: 50px 20px 100px 190px;
+}
+.ls-border:hover:before {
+	top: 1px;
+	left: 1px;
+	height: 1%;
+	width: 1%;
 }
 .picShadowEffect {
 	width: 263px;
@@ -764,7 +779,7 @@ input[type="text"].ct-search-input {
 	float: left;
 	font-size: 14px;
 	font-weight: 500;
-	color: rgba(133,0,166,0.7);
+	color: #8500A6;
 }
 .ls-info-greutate {
 	padding-top: 5px;
@@ -773,7 +788,12 @@ input[type="text"].ct-search-input {
 	float: right;
 	font-size: 14px;
 	font-weight: 500;
-	color: rgba(133,0,166,0.7);
+	color: #8500A6;
+}
+.ls-info p {
+	margin: 0 10px;
+	font-style: italic;
+	color: #8500A6;
 }
 
 @media screen and (max-width: 945px) {
