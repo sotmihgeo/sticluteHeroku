@@ -16,7 +16,7 @@ object Application extends Controller {
     //ar trebui sa initializez userul global
     Global.connectedUser = User("micky.sotirca@gmail.com", "", false, false)
     
-    SticlaData.lista(0, 10, "%" + "" + "%").map { pagina =>
+    SticlaData.listaRandom(0, 3, "%" + "" + "%").map { pagina =>
       Ok(views.html.index("...", Global.connectedUser, pagina))
     }.recover {
       case ex: TimeoutException =>

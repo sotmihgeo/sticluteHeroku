@@ -19,6 +19,30 @@ object SticlaData {
     try db.run(sticlute.filter(_.denumire.toLowerCase like filtru.toLowerCase()).length.result)
     finally db.close
     
+  /*def lista6Random(): Future[Pagina[Sticla]] = {
+      try {
+        val rand = SimpleFunction.nullary[Double]("random")
+        val query = sticlute.sortBy(sticla => rand).take(6)
+        val result = db.run(query.result)
+        result flatMap (sticlute => Future { 0 } map (nrTotalSticlute => Pagina(sticlute, 0, 0, nrTotalSticlute)))
+      }
+      finally { db.close() }
+    }*/
+  def listaRandom(pagina: Int = 0, nrElementePerPagina: Int = 10, filtru: String ="%"): Future[Pagina[Sticla]] = {
+      try {
+        val nrSticluteAfisate = pagina * nrElementePerPagina
+        val rand = SimpleFunction.nullary[Double]("random")
+        val query = 
+          (for {
+            sticluta <- sticlute if sticluta.denumire.toLowerCase like filtru.toLowerCase()
+          } yield (sticluta)).sortBy(sticla => rand).drop(nrSticluteAfisate).take(nrElementePerPagina)
+        val nrSticluteTotal = nrSticlute(filtru)
+        val result = db.run(query.result)
+        result flatMap (sticlute => nrSticluteTotal map (nrTotalSticlute => Pagina(sticlute, pagina, nrSticluteAfisate, nrTotalSticlute)))
+      }
+      finally { db.close() }
+    }  
+  
   def lista(pagina: Int = 0, nrElementePerPagina: Int = 10, filtru: String ="%"): Future[Pagina[Sticla]] = {
       try {
         val nrSticluteAfisate = pagina * nrElementePerPagina
