@@ -751,7 +751,7 @@ input[type="text"].ct-search-input {
 	margin-bottom: 10px;
 	border-bottom: 1px solid rgba(133,0,166,0.3);
 	border-radius: 0 0 5px 0;
-	font-size: 26px;
+	font-size: 20px;
 }
 .ls-info-colectie {
 	font-size: 14px;
@@ -780,7 +780,10 @@ input[type="text"].ct-search-input {
 	margin-left: 10px;
 }
 .ls-info-nume a {
-	/*display: block;*/
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	color: #000;
     text-decoration: none;
     -webkit-transition: 0.3s all ease-in-out;
@@ -814,6 +817,9 @@ input[type="text"].ct-search-input {
 	margin: 0 10px;
 	font-style: italic;
 	color: #8500A6;
+	height: 60px;
+	overflow: hidden;
+	text-align: justify;
 }
 .bottom {
 	 background: #de61fd; /* rgba(250, 237, 254, 0.7); */ /*  #FAEDFE */ /* #de61fd */ 
