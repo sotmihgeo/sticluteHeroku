@@ -24,5 +24,16 @@ object Application extends Controller {
         InternalServerError(ex.getMessage)
     }
   }
+  
+  def sticla(id:Int): Action[AnyContent] = Action.async { implicit request =>
+    SticlaData.sticlaById(id).map { 
+      case Some(sticla) => Ok(views.html.sticla(Global.connectedUser, sticla))
+      case None => NotFound("not found")
+    }.recover {
+      case ex: TimeoutException =>
+        Logger.error("Problema la incarcare sticluta")
+        InternalServerError(ex.getMessage)
+    } 
+  }
 
 }

@@ -1,0 +1,10 @@
+@(connectedUser: models.User, sticla: models.Sticla)
+
+@main(title = sticla.denumire.getOrElse("???"), connectedUser) {
+	
+	@Option(sticla) map { s =>
+	  <h3>s.denumire</h3>
+	} getOrElse {
+	  Nu exista!
+	}
+}

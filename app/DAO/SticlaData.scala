@@ -55,5 +55,13 @@ object SticlaData {
         result flatMap (sticlute => nrSticluteTotal map (nrTotalSticlute => Pagina(sticlute, pagina, nrSticluteAfisate, nrTotalSticlute)))
       }
       finally { db.close() }
-    } 
+    }
+  
+  def sticlaById(id: Int): Future[Option[Sticla]] ={
+    try {
+      val query = sticlute.filter(_.id === id)
+      db.run(query.result.headOption) 
+    }
+    finally { db.close() }
+  }
 }

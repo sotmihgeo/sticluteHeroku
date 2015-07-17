@@ -15,7 +15,7 @@
   	            <div class="ls-info">
   	              <h3>
   	                <span class="ls-info-colectie"><a href="">[@sticluta.colectie]</a></span>
-                    <span class="ls-info-nume"><a href="">@sticluta.denumire</a></span>
+                    <span class="ls-info-nume"><a href="@routes.Application.sticla(sticluta.id.get)">@sticluta.denumire</a></span>
     	            <span class="ls-info-tara"><span class="flag-icon flag-icon-@{sticluta.tara.map(_.toLowerCase)}"></span> @sticluta.tara</span>
   	                <span class="ls-info-greutate"><span>@sticluta.greutate</span>ml</span>
   	              </h3>

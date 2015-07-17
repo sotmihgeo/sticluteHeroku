@@ -110,8 +110,15 @@ html {
 	-webkit-font-smoothing: antialiased;
     padding: 0;
     margin: 0;
+    height: 100%;
     background: rgba(250, 237, 254, 0.7); /*  #FAEDFE */
 }
+
+.wrapper {
+	min-height:100%;
+	position:relative;
+}
+
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 
 .top:before, .top:after {
@@ -646,6 +653,10 @@ input[type="text"].ct-search-input {
 	transition: height 0.3s;
 }
 
+.container {
+	padding-bottom: 271px; /* Height of the footer element 236 + 35 px*/
+}
+
 .lista-sticle-container {
 	width: 100%;
 }
@@ -823,7 +834,11 @@ input[type="text"].ct-search-input {
 }
 .bottom {
 	 background: #de61fd; /* rgba(250, 237, 254, 0.7); */ /*  #FAEDFE */ /* #de61fd */ 
-	 margin-top: 35px;
+	 /*margin-top: 35px; 236*/
+	 width: 100%;
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
 }
 .bottom-inner {
 	position: relative;
